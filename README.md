@@ -53,4 +53,6 @@ Do you test something like the screen below:
 
 ![Screen](https://raw.github.com/edersoncorbari/socket-two-way/master/doc/server-test.png)
 
+I created a post about this project, you can see it here:[https://edersoncorbari.github.io/tutorials/qt-socket-server/](https://edersoncorbari.github.io/tutorials/qt-socket-server/)
+
 It's the end :-)
