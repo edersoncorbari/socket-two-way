@@ -1,0 +1,44 @@
+#!/bin/sh
+
+ABORT=no
+
+check_cmake()
+{
+  (cmake --version) </dev/null >/dev/null 2>&1 || {
+    echo "Error: cmake (version 2.8 or later) must be present to configure and install Genesis library"
+    echo ""
+    echo "cmake might be available as a package for your system,"
+    echo "or can be downloaded from http://cmake.org"
+    ABORT=yes
+  }
+}
+
+check_build()
+{
+  if [ ! -d "build" ]; then
+    mkdir build
+  fi
+  cd build
+  rm -f CMakeCache.txt
+  cmake -DCMAKE_BUILD_TYPE=Release $@ .. && make
+}
+
+print_message()
+{
+  echo
+  echo 'To run the socket server type the command below: '
+  echo
+  echo './build/tools/run-socket/run-socket'
+  echo
+  echo 'To run the tests run the scripts in the (test) folder. Eg: '
+  echo
+  echo 'python2 ./test/info.py'
+  echo
+}
+
+check_cmake
+check_build
+test "$ABORT" = yes && exit -1
+print_message
+exit 0
+
