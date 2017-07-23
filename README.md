@@ -4,8 +4,8 @@ Simple bidirectional socket using [Qt](https://www.qt.io/) and [C++11](https://i
 a structure of a bidirectional socket server developed with Qt, it is the client asks a question (command) the server 
 responds by doing some action. It can be used by others who have this need, simply by adapting to their current need.
 
-It was created based on the Fortune example that comes in the Qt sample package, is thread-based and has 
-been tested on Windows, Linux and FreeBSD systems.
+It was created based on the [Fortune](http://doc.qt.io/qt-5/qtnetwork-fortuneserver-example.html) example that comes 
+in the Qt sample package, is thread-based and has been tested on Windows, Linux and FreeBSD systems.
 
 It is not using SSL because it did not need this security for my client, but you can easily adapt it 
 using the [QSslSocket](http://doc.qt.io/qt-5/qsslsocket.html) class.
@@ -20,9 +20,9 @@ using the [QSslSocket](http://doc.qt.io/qt-5/qsslsocket.html) class.
  
 To compile the project, you must have the following tools installed:
 
-* Qt-5.7 or greater;
-* CMake-2.8 or greater;
-* CLang-3 or greater, you can also use GCC.
+* [Qt-5.7](https://www.qt.io/download/) or greater;
+* [CMake-2.8](https://cmake.org/) or greater;
+* [CLang-3](https://clang.llvm.org/) or greater, you can also use [GCC](https://gcc.gnu.org/).
 
 Now run the commands below to compile the project:
 
@@ -32,7 +32,7 @@ $ cd socket-two-way
 $ ./configure
 ```
 
-Ready! You may need to export Qt's PATH's.
+Ready! You may need to export Qt's PATH's. You can use QtCreator too, but I have not tested it.
 
  ### Testing ###
  
@@ -48,3 +48,9 @@ Now in another terminal window run the test:
 ```shell
 $  python2 test/info.py
 ```
+
+Do you test something like the screen below:
+
+![Screen](https://raw.github.com/edersoncorbari/socket-two-way/master/doc/server-test.png)
+
+It's the end :-)
